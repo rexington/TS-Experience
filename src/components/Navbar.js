@@ -5,10 +5,11 @@ import {
   Bars,
   NavMenu,
   NavBtn,
-  NavBtnLink
+  NavBtnLink,
+  ThoughtSpotLogo
 } from "./NavbarElements";
 
-import logo from "./T-Logo.png";
+
 
 const Navbar = () => {
   return (
@@ -16,17 +17,20 @@ const Navbar = () => {
       <Nav>
         <Bars />
         <NavMenu>
-          <img src={logo} alt="Logo" width="24px" height="24px" />
-          <NavLink to="/liveboard" activeStyle>
-            Liveboard
+        <ThoughtSpotLogo style={{marginLeft: + '-45'}} />
+          <NavLink to="/liveboard">
+            LIVEBOARD
           </NavLink>
-          <NavLink to="/search" activeStyle>
-            Search
+          <NavLink to="/search" >
+            SEARCH
+          </NavLink>
+          <NavLink to={{pathname: "https://codesandbox.io/s/keen-einstein-1g9vrl"}} target="_blank" >
+            DEVELOP
           </NavLink>
         </NavMenu>
 
-        <NavBtn>
-          <NavBtnLink to="/freetrial">Free Trial</NavBtnLink>
+        <NavBtn style={{marginRight:+ '20'}}>
+          <NavBtnLink  to={{pathname: "https://www.thoughtspot.com/trial?tsref=producttour"}} target="_blank">FREE TRIAL</NavBtnLink>
         </NavBtn>
       </Nav>
     </>

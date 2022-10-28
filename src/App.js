@@ -3,25 +3,42 @@ import "./App.css";
 import { Global, css } from "@emotion/react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { init, AuthType, Action } from "@thoughtspot/visual-embed-sdk";
+import './config'
+
 import Home from "./pages/Home";
 import Liveboard from "./pages/Liveboard";
 import Search from "./pages/Search";
 import FreeTrial from "./pages/FreeTrial";
-import "./fonts/bbrollermonoprotx-regular.otf";
+import { FaAccessibleIcon } from "react-icons/fa";
+import { doBasicAuth } from "@thoughtspot/visual-embed-sdk/lib/src/auth";
+import { gbl_thoughtSpotHost } from "./config";
 
+
+//use https://transfonter.org/ to convert fonts
 const GlobalStyles = css`
-  //@import url("https://fonts.googleapis.com/css?family=Dancing+Script&display=swap");
+  @font-face {
+    font-family: "BBRollerRegular";
+    src: url("./fonts/BBRollerMonoProTX-Regular.ttf") format("truetype");
+  }
 
   @font-face {
-    font-family: "BBRoller";
-    src: local("BBRoller"),
-      url("./fonts/bbrollermonoprotx-regular.otf") format("otf");
+    font-family: "OptimoPlain-Regular";
+    src: url("./fonts/Plain-Regular.ttf") format("truetype");
   }
 
   * {
     text-align: center;
   }
 `;
+
+
+// try-everywhere provides unauthenticated aceess. You can not use this for production. 
+// Please refer to <docs link> for auth options. 
+init({
+  thoughtSpotHost: gbl_thoughtSpotHost,
+  authType: AuthType.None
+});
 
 function App() {
   return (

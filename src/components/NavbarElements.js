@@ -3,9 +3,11 @@ import { NavLink as Link } from "react-router-dom";
 import styled from "@emotion/styled";
 
 export const Nav = styled.nav`
+
   background: #31353f;
   height: 38px;
   display: flex;
+  align-items: left;
   justify-content: space-between;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
@@ -15,7 +17,9 @@ export const Nav = styled.nav`
 
 export const NavLink = styled(Link)`
   color: #ddd;
-  font-family: "BBRoller";
+  font-family: "BBRollerRegular";
+  font-weight: 400;
+  font-size: 12px;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -44,13 +48,9 @@ export const Bars = styled(FaBars)`
 
 export const NavMenu = styled.div`
   display: flex;
-  align-items: center;
+  align-items: left;
   margin-right: -24px;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
+  
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -70,20 +70,30 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background: #ddd;
-  padding: 10px 22px;
-  color: #000000;
-  font-family: "BBRoller";
+  background-color: none;
+  color: #ddd;
+  padding: 5px 10px;
+  font-family: "BBRollerRegular";
+  font-weight: 400;
+  font-size: 12px;
   outline: none;
-  border: none;
+  border-style: solid;
+  border-color: #ddd;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  /* Second Nav */
-  margin-left: 24px;
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #ddd;
+    background-color: #585A5D;
   }
+`;
+
+export const ThoughtSpotLogo = styled.div`
+padding: 15px 80px;
+text-align: left;
+background-image: url("./T-Logo.png");
+background-size: 24px 24px;
+background-repeat: no-repeat;
+background-position: center;
+
 `;
